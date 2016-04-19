@@ -124,6 +124,10 @@ module ClassifierReborn
     def classify_with_score(text)
       (classifications(text).sort_by { |a| -a[1] })[0]
     end
+    
+    def classify_with_score_all_results(text)
+      (classifications(text).sort_by { |a| -a[1] })
+    end
 
     # Return the classification without the score
     def classify(text)
