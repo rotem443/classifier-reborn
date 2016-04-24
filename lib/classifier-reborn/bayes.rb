@@ -126,13 +126,7 @@ module ClassifierReborn
     end
     
     def classify_with_score_all_results(text)
-      classification_dict = {}
-      (classifications(text).sort_by { |a| -a[1] }).each do |classify_result|
-        Rails.logger.warn "#{classify_result}"
-        classification_dict[:classify_result[0]] = classify_result[1] 
-      end
-      
-      return classification_dict
+      return (classifications(text).sort_by { |a| -a[1] })
     end
 
     # Return the classification without the score
